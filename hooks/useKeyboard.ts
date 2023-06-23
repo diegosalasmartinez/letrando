@@ -15,7 +15,10 @@ export const useKeyboard = () => {
     if (availableWords) {
       const wordsArray: string[] = JSON.parse(availableWords)
       setAvailableWords(wordsArray.map((w: string) => w.toUpperCase()))
-      pickRandomWord()
+
+      const answerNumber = Math.floor(Math.random() * wordsArray.length) + 1
+      const finalAnswer = wordsArray[answerNumber].toUpperCase()
+      setAnswer(finalAnswer)
     }
   }, [])
 

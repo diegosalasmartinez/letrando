@@ -13,7 +13,9 @@ export function BackSpace({ handleKeyPress }: KeyboardButtonProps) {
   return (
     <button
       className={cn(
-        'flex aspect-square w-full items-center justify-center rounded-md border-[2px] border-gray-200 bg-white text-center text-sm lg:text-lg font-semibold text-gray-500 hover:bg-gray-300 hover:border-gray-300',
+        'flex aspect-square w-full items-center justify-center rounded-md text-center font-medium text-gray-500',
+        'border-[1px] lg:border-[2px] text-xs md:text-sm lg:text-lg',
+        'border-gray-200 bg-white hover:bg-gray-300 hover:border-gray-300',
       )}
       onClick={handleClick}
     >
@@ -21,10 +23,10 @@ export function BackSpace({ handleKeyPress }: KeyboardButtonProps) {
         xmlns='http://www.w3.org/2000/svg'
         fill='none'
         viewBox='0 0 24 24'
-        strokeWidth='2'
+        strokeWidth='1.5'
         stroke='currentColor'
         // eslint-disable-next-line tailwindcss/classnames-order
-        className={cn('w-5 h-5 lg:w-6 lg:h-6')}
+        className={cn('w-4 h-4 lg:w-6 lg:h-6')}
       >
         <path
           strokeLinecap='round'
@@ -45,7 +47,9 @@ export function Enter({ handleKeyPress }: KeyboardButtonProps) {
   return (
     <button
       className={cn(
-        'col-span-2 flex flex-grow w-full items-center justify-center rounded-md border-[2px] border-gray-200 bg-white text-center text-sm lg:text-lg font-semibold text-gray-500 hover:bg-gray-300 hover:border-gray-300',
+        'col-span-2 flex flex-grow w-full items-center justify-center rounded-md text-center font-medium text-gray-500',
+        'border-[1px] lg:border-[2px] text-xs md:text-sm lg:text-lg',
+        'border-gray-200 bg-white'
       )}
       onClick={handleClick}
     >
