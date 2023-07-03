@@ -22,7 +22,7 @@ export default function BoardWrapper() {
 
   return (
     <div>
-      <div className='mx-auto mt-4 flex flex-col gap-1.5 xl:w-4/5'>
+      <div className='mx-auto mb-10 flex flex-col gap-1.5 xl:w-3/5 2xl:mb-20 2xl:mt-10'>
         {words.map((word, index) => (
           <WordLine
             key={index}

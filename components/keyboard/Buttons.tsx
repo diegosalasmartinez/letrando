@@ -49,7 +49,7 @@ export function Enter({ handleKeyPress }: KeyboardButtonProps) {
       className={cn(
         'col-span-2 flex flex-grow w-full items-center justify-center rounded-md text-center font-medium text-gray-500',
         'border-[1px] lg:border-[2px] text-xs md:text-sm lg:text-lg',
-        'border-gray-200 bg-white'
+        'border-gray-200 bg-white hover:bg-gray-300 hover:border-gray-300',
       )}
       onClick={handleClick}
     >

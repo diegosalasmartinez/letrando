@@ -14,16 +14,17 @@ export default function EndOfGame({ answer, win, resetGame }: EndOfGameProps) {
     if (win) {
       jsConfetti.addConfetti()
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [win])
 
   return (
-    <div className='mt-8 text-center'>
+    <div className='text-center'>
       {win ? (
-        <div className='text-2xl font-bold text-green-600'>Felicidades </div>
+        <div className='text-3xl font-bold text-green-600'>Felicidades </div>
       ) : (
         <>
-          <div className='text-2xl font-bold text-red-600'>Fin del juego</div>
-          <p>La palabra era {answer}</p>
+          <div className='mb-1 text-3xl font-bold text-red-600'>Fin del juego</div>
+          <p className='mb-2 text-base xl:text-lg'>La palabra era <span className='font-bold'>{answer}</span></p>
         </>
       )}
       <button
