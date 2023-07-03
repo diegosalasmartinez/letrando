@@ -6,6 +6,7 @@ interface LetterBoxProps {
   wrongPosition: boolean
   currentWord: boolean
   currentLetter: boolean
+  wordExists: boolean
   validate: boolean
 }
 
@@ -15,10 +16,11 @@ export default function LetterBox({
   wrongPosition,
   currentWord,
   currentLetter,
+  wordExists,
   validate,
 }: LetterBoxProps) {
   return (
-    <div className='relative'>
+    <div className={cn('relative', currentWord && !wordExists && 'animate-shake')}>
       <FrontLetterAnimation
         letter={letter}
         currentWord={currentWord}
@@ -42,12 +44,7 @@ interface FrontLetterAnimationProps {
   validate: boolean
 }
 
-function FrontLetterAnimation({
-  letter,
-  currentWord,
-  currentLetter,
-  validate,
-}: FrontLetterAnimationProps) {
+function FrontLetterAnimation({ letter, currentWord, currentLetter, validate }: FrontLetterAnimationProps) {
   return (
     <div
       className={cn(

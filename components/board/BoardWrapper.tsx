@@ -11,6 +11,7 @@ export default function BoardWrapper() {
     invalidLetters,
     correctLetters,
     endOfGame,
+    wordExists,
     win,
     onLetterClick,
     resetGame,
@@ -29,6 +30,7 @@ export default function BoardWrapper() {
             word={word}
             currentWord={index === currentWord}
             validate={index < currentWord}
+            wordExists={wordExists}
             answer={answer}
           />
         ))}

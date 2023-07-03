@@ -24,7 +24,7 @@ export default function EndOfGame({ answer, win, resetGame }: EndOfGameProps) {
       ) : (
         <>
           <div className='mb-1 text-3xl font-bold text-red-600'>Fin del juego</div>
-          <p className='mb-2 text-base xl:text-lg'>La palabra era <span className='font-bold'>{answer}</span></p>
+          <p className='mb-2 text-base'>La palabra era <span className='font-bold'>{answer}</span></p>
         </>
       )}
       <button

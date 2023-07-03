@@ -8,6 +8,7 @@ export const useKeyboard = () => {
   const [invalidLetters, setInvalidLetters] = useState<string[]>([])
   const [correctLetters, setCorrectLetters] = useState<string[]>([])
   const [endOfGame, setEndOfGame] = useState<boolean>(false)
+  const [wordExists, setWordExists] = useState<boolean>(true)
   const [win, setWin] = useState<boolean>(false)
 
   useEffect(() => {
@@ -54,6 +55,8 @@ export const useKeyboard = () => {
   }
 
   const addLetter = (letter: string) => {
+    setWordExists(true)
+
     const length = words[index].length
     if (length >= 5) return
 
@@ -68,6 +71,8 @@ export const useKeyboard = () => {
   }
 
   const removeLetter = () => {
+    setWordExists(true)
+
     const length = words[index].length
     if (length <= 0) return
 
@@ -86,8 +91,12 @@ export const useKeyboard = () => {
     if (length < 5) return
 
     const wordExists = availableWords.includes(words[index])
-    if (!wordExists) return
+    if (!wordExists) {
+      setWordExists(false)
+      return
+    }
 
+    setWordExists(true)
     setIndex(index + 1)
     if (words[index] === answer) {
       setEndOfGame(true)
@@ -123,6 +132,7 @@ export const useKeyboard = () => {
     setInvalidLetters([])
     setCorrectLetters([])
     setEndOfGame(false)
+    setWordExists(true)
     setWin(false)
     pickRandomWord()
   }
@@ -139,5 +149,16 @@ export const useKeyboard = () => {
     }
   }, [onKeyDown])
 
-  return { words, index, answer, endOfGame, win, invalidLetters, correctLetters, onLetterClick, resetGame }
+  return {
+    words,
+    index,
+    answer,
+    endOfGame,
+    wordExists,
+    win,
+    invalidLetters,
+    correctLetters,
+    onLetterClick,
+    resetGame,
+  }
 }
