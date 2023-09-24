@@ -13,7 +13,7 @@ interface KeyboardProps {
 
 export default function Keyboard({ invalidLetters, correctLetters, handleKeyPress }: KeyboardProps) {
   return (
-    <div className='flex flex-col justify-center gap-1 lg:gap-1.5'>
+    <div className='flex flex-col justify-center gap-1 font-mono lg:gap-1.5'>
       <div className='grid w-full grid-cols-10 gap-1 lg:gap-1.5'>
         {firstLine.map((letter, index) => (
           <KeyboardButton
